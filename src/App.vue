@@ -1,18 +1,44 @@
 <template>
   <div id="app">
-    <miaoHead></miaoHead>
+    <mainNav :main = "options.mainOptions"></mainNav>
+
 
   </div>
 </template>
 
 <script>
-import miaoHead from './components/miaoHead'
+import mainNav from './components/mainNav'
 export default {
   name: 'app',
   data () {
-    return {}
+    return {
+      options:{
+              mainOptions:{
+                navName:"vue测试系统",
+                mainOperation:[
+                  {
+                    title:"邮箱",
+                    icon:"./assets/logo.png"
+                  },
+                  {
+                    title:"任务",
+                    icon:"./assets/logo.png"
+                  },
+                  {
+                    title:"信息",
+                     icon:"./assets/logo.png"
+                  },
+                  {
+                    title:"用户",
+                     icon:"./assets/logo.png"
+                  }
+
+                ]
+              }
+            }
+    }
   },
-  components:{miaoHead}
+  components:{mainNav}
 }
 </script>
 
@@ -23,13 +49,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 h1, h2 {
   font-weight: normal;
 }
-
+body,p,ul{
+  margin:0;
+  padding:0;
+}
 ul {
   list-style-type: none;
   padding: 0;
